@@ -12,6 +12,7 @@
   "dependencies": {
     "express": "^4.16.4",
     "nodemon": "^1.18.10",
+    "rxjs": "^6.4.0",
     "serve-index": "^1.9.1",
     "ts-loader": "^5.3.3",
     "ts-node": "^8.0.2",
