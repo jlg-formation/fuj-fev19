@@ -3,8 +3,9 @@ const serveIndex = require('serve-index');
 
 const app = express();
 
-app.use(express.static('..'));
-app.use(serveIndex('..', { 'icons': true }));
+const www = 'www';
+app.use(express.static(www));
+app.use(serveIndex(www, { 'icons': true }));
 
 app.use((req, res, next) => {
   console.log('url not found', req.url);
