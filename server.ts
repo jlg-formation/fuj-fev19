@@ -3,7 +3,7 @@ const serveIndex = require('serve-index');
 
 const app = express();
 
-const www = 'www';
+const www: string = 'www';
 app.use(express.static(www));
 app.use(serveIndex(www, { 'icons': true }));
 
