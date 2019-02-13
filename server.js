@@ -1,10 +1,16 @@
-const express = require('express')
-const app = express()
+const express = require('express');
+const serveIndex = require('serve-index');
 
-app.get('/', function (req, res) {
-  res.send('Hello World!')
+const app = express();
+
+app.use(express.static('..'));
+app.use(serveIndex('..', { 'icons': true }));
+
+app.use((req, res, next) => {
+  console.log('url not found', req.url);
+  next();
 })
 
 app.listen(3000, function () {
-  console.log('Example app listening on port 3000!')
-})
+  console.log('Example app listening on port 3000!');
+});
