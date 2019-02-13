@@ -1,16 +1,15 @@
 const path = require('path');
 
 module.exports = {
-    externals: [
-        /^[a-z\-0-9]+$/ // Ignore node_modules folder
-    ],
-    target: 'node',
     mode: 'none',
+    externals: [
+        /^[a-z\-0-9]+$/ // all modules from node_modules ignored.
+    ], 
     entry: './server.ts',
     output: {
         filename: 'server.js',
         path: path.resolve(__dirname, 'dist'),
-        libraryTarget: "commonjs"
+        libraryTarget: 'commonjs'
     },
     resolve: {
         extensions: ['.ts', '.js']
